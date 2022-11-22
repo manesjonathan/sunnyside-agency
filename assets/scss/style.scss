@@ -1,0 +1,232 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+// Layout properties
+$layoutWidth: 1440px;
+
+// Primary colors
+$softRed: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$darkDesaturatedCyan: hsl(167, 40%, 24%);
+$darkBlue: hsl(198, 62%, 26%);
+$darkModerateCyan: hsl(168, 34%, 41%);
+
+// Neutral color
+$veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+$veryDarkGrayishBlue: hsl(213, 9%, 39%);
+$darkGrayishBlue: hsl(232, 10%, 55%);
+$grayishBlue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// Typography
+$fontFamily: "Barlow";
+$fontFamilyWeight: 600;
+$fontFamilyAlt: "Fraunces";
+$fontFamilyWeightAlt: 700;
+$bodyFontSize: 18px;
+
+// Mixins
+@mixin set-background($urlBackground) {
+  background-image: url($urlBackground);
+  background-size: cover;
+  background-repeat: no-repeat; 
+}
+
+/*--------------------------------------------------------------
+# BODY
+--------------------------------------------------------------*/
+
+
+body {padding:0;margin:0;}
+
+
+// Setup grid
+// @media screen and (min-width:1440px) {
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header"
+    "grid-photo grid-photo"
+    "grid-photo grid-photo"
+    "grid-photo grid-photo"
+    "testimonial testimonial"
+    "gallery gallery"
+    "footer footer";
+}
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+.header {
+  @include set-background("../image/photos/image-header.jpg");
+  background-size:100% 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "logo menu"
+    "title title";
+  grid-area: header;
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .menu {
+    grid-area: menu;
+
+    nav {
+      ul {
+        list-style-type: none;
+        li {
+          float: left;
+          width: 25%;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .title {
+    grid-area: title;
+    text-align: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# Grid photo
+--------------------------------------------------------------*/
+.grid-photo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "photo-1 photo-2"
+    "photo-3 photo-4"
+    "photo-5 photo-6";
+  grid-area: grid-photo;
+
+  .photo-1 {
+    grid-area: photo-1;
+    text-align: justify;
+    margin: 0;
+  }
+
+  .photo-2 {
+    grid-area: photo-2;
+    @include set-background("../image/photos/image-transform.jpg");
+  }
+
+  .photo-3 {
+    grid-area: photo-3;
+    @include set-background("../image/photos/image-stand-out.jpg");
+  }
+
+  .photo-4 {
+    grid-area: photo-4;
+    text-align: justify;
+  }
+
+  .photo-5 {
+    grid-area: photo-5;
+    @include set-background("../image/photos/image-graphic-design.jpg");
+  }
+
+  .photo-6 {
+    grid-area: photo-6;
+    @include set-background("../image/photos/image-photography.jpg");
+  }
+}
+
+/*--------------------------------------------------------------
+# Testimonial
+--------------------------------------------------------------*/
+.testimonial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "testimonial-title testimonial-title testimonial-title"
+    "testimonial-1 testimonial-2 testimonial-3";
+  grid-area: testimonial;
+  align-items: center;
+  align-content: center;
+
+  .testimonial-title {
+    text-align: center;
+    grid-area: testimonial-title;
+  }
+
+  .testimonial-1 {
+    grid-area: testimonial-1;
+  }
+
+  .testimonial-2 {
+    grid-area: testimonial-2;
+  }
+
+  .testimonial-3 {
+    grid-area: testimonial-3;
+  }
+}
+
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "gallery-1 gallery-2 gallery-3 gallery-4";
+  grid-area: gallery;
+  .gallery-1 {
+    grid-area: gallery-1;
+    @include set-background("../image/photos/image-gallery-milkbottles.jpg");
+  }
+
+  .gallery-2 {
+    grid-area: gallery-2;
+    @include set-background("../image/photos/image-gallery-orange.jpg");
+  }
+
+  .gallery-3 {
+    grid-area: gallery-3;
+    @include set-background("../image/photos/image-gallery-cone.jpg");
+  }
+
+  .gallery-4 {
+    grid-area: gallery-4;
+    @include set-background("../image/photos/image-gallery-sugarcubes.jpg");
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+    background-color: $darkModerateCyan;
+  grid-area: footer;    
+  nav {
+    ul {
+      list-style-type: none;
+      li {
+        float: left;
+        width: 25%;
+        text-align: center;
+      }
+    }
+  }
+}
+//}
