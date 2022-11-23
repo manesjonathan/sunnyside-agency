@@ -59,7 +59,7 @@ $bodyFontSize: 1.25em;
 }
 
 @mixin config-picture-card {
-  height: 100vh;
+  height: 125vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -67,7 +67,7 @@ $bodyFontSize: 1.25em;
   h2 {
     position: absolute;
     width: 100%;
-    bottom: 30vh;
+    top: 65vh;
     text-align: center;
     color: $darkDesaturatedCyan;
     font-family: $fontFamilyAlt;
@@ -75,7 +75,7 @@ $bodyFontSize: 1.25em;
     font-weight: $fontFamilyWeightAlt;
   }
   p {
-    margin: 10%;
+    margin: 10% 0;
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -121,9 +121,6 @@ header {
     overflow: hidden;
     position: relative;
 
-    #myLinks {
-      display: none;
-    }
     a {
       color: $white;
       padding: 5vmin;
@@ -153,15 +150,34 @@ header {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  img {
-    width: 100vw;
+
+  .card-1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include set-background("../image/photos/image-transform.jpg");
+  }
+
+  .card-3 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include set-background("../image/photos/image-stand-out.jpg");
   }
 
   .card-2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     @include config-text-card($yellow);
   }
 
   .card-4 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
     @include config-text-card($softRed);
   }
 
@@ -291,6 +307,135 @@ footer {
           font-size: 2em;
           margin-top: 10vh;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  body {
+  }
+  header {
+    img {
+      align-self: center;
+      width: 6%;
+      left: 0;
+    }
+    .icon {
+      visibility: hidden;
+    }
+  }
+
+  .nav-menu-width {
+    display: block;
+    ul {
+      display: flex;
+      position: absolute;
+      list-style-type: none;
+      top: 0;
+      right: 0;
+      font-size: 0.5em;
+      font-family: $fontFamily;
+    }
+  }
+
+  .section-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .row-1 {
+      display: flex;
+      flex-direction: row-reverse;
+      article {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .row-2 {
+      display: flex;
+      article {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .row-3 {
+      display: flex;
+      article {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  .section-testimonial {
+    .container {
+      display: flex;
+      flex-direction: row;
+      .testimonial-card {
+        margin: 0;
+        padding: 5%;
+        width: 1/3;
+        height: auto;
+        font-size: 0.6em;
+        img {
+          border-radius: 50%;
+          width: 33%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .section-gallery {
+    article {
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 50%;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+
+
+    .menu-list {
+      width: 60%;
+      display: inline-block;
+  
+      ul {
+        font-family: $fontFamily;
+        font-size: $bodyFontSize;
+        font-weight: $fontFamilyWeight;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+  
+        li {
+          width: 20em;
+        }
+      }
+    }
+    .social-list {
+      width: 40%;
+      display: inline-block;
+  
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+  
+        
       }
     }
   }
