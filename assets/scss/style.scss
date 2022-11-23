@@ -23,207 +23,244 @@ $fontFamily: "Barlow";
 $fontFamilyWeight: 600;
 $fontFamilyAlt: "Fraunces";
 $fontFamilyWeightAlt: 700;
-$bodyFontSize: 18px;
+$bodyFontSize: 1.25em;
 
 // Mixins
 @mixin set-background($urlBackground) {
   background-image: url($urlBackground);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
-/*--------------------------------------------------------------
-# BODY
---------------------------------------------------------------*/
-
-body {
-  margin: auto;
-}
-
-// Setup grid
-// @media screen and (min-width:1440px) {
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "header header"
-    "grid-photo grid-photo"
-    "grid-photo grid-photo"
-    "grid-photo grid-photo"
-    "testimonial testimonial"
-    "gallery gallery"
-    "footer footer";
-}
-/*--------------------------------------------------------------
-# HEADER
---------------------------------------------------------------*/
-.header {
-  @include set-background("../image/photos/image-header.jpg");
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "logo menu"
-    "title title";
-  grid-area: header;
-
-  .logo {
-    grid-area: logo;
+@mixin config-text-card($color) {
+  text-align: center;
+  margin: 10%;
+  h2 {
+    font-family: $fontFamilyAlt;
+    font-size: 2.5em;
+    font-weight: $fontFamilyWeightAlt;
+  }
+  p {
+    color: $darkGrayishBlue;
+    font-family: $fontFamily;
+    font-size: $bodyFontSize;
+    font-weight: $fontFamilyWeightAlt;
+    line-height: 1.75em;
   }
 
-  .menu {
-    grid-area: menu;
+  h3 {
+    margin-top: 10vh;
+    text-decoration: underline;
+    text-decoration-color: $color;
+    text-decoration-thickness: 0.2em;
+  }
+}
 
-    nav {
-      ul {
-        list-style-type: none;
-        li {
-          float: left;
-          width: 25%;
-          text-align: center;
-        }
+@mixin config-picture-card {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    width: 100%;
+    bottom: 30vh;
+    text-align: center;
+    color: $darkDesaturatedCyan;
+    font-family: $fontFamilyAlt;
+    font-size: 2.5em;
+    font-weight: $fontFamilyWeightAlt;
+  }
+  p {
+    margin: 10%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    color: $darkDesaturatedCyan;
+    font-family: $fontFamily;
+    font-size: $bodyFontSize;
+    font-weight: $fontFamilyWeightAlt;
+    line-height: 1.75em;
+  }
+}
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+  @include set-background("../image/photos/image-header.jpg");
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+
+  img {
+    align-self: center;
+    width: 12%;
+    left: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: $fontFamilyAlt;
+    font-size: 4em;
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  .topnav {
+    overflow: hidden;
+    position: relative;
+
+    #myLinks {
+      display: none;
+    }
+    a {
+      color: $white;
+      padding: 5vmin;
+      text-decoration: none;
+      font-size: 2em;
+      display: block;
+    }
+    a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .active {
+      img {
+        height: 4vh;
+        width: auto;
       }
     }
   }
-
-  .title {
-    grid-area: title;
-    text-align: center;
-  }
 }
 
 /*--------------------------------------------------------------
-# Grid photo
+# Card
 --------------------------------------------------------------*/
-.grid-photo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "photo-1 photo-2"
-    "photo-3 photo-4"
-    "photo-5 photo-6";
-  grid-area: grid-photo;
-
-  .photo-1 {
-    grid-area: photo-1;
-    text-align: justify;
+.section-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  img {
+    width: 100vw;
   }
 
-  .photo-2 {
-    grid-area: photo-2;
-    @include set-background("../image/photos/image-transform.jpg");
+  .card-2 {
+    @include config-text-card($yellow);
   }
 
-  .photo-3 {
-    grid-area: photo-3;
-    @include set-background("../image/photos/image-stand-out.jpg");
+  .card-4 {
+    @include config-text-card($softRed);
   }
 
-  .photo-4 {
-    grid-area: photo-4;
-    text-align: justify;
-  }
-
-  .photo-5 {
-    grid-area: photo-5;
+  .card-5 {
     @include set-background("../image/photos/image-graphic-design.jpg");
+    @include config-picture-card();
   }
 
-  .photo-6 {
-    grid-area: photo-6;
+  .card-6 {
     @include set-background("../image/photos/image-photography.jpg");
+    @include config-picture-card();
   }
 }
 
 /*--------------------------------------------------------------
 # Testimonial
 --------------------------------------------------------------*/
-.testimonial {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "testimonial-title testimonial-title testimonial-title"
-    "testimonial-1 testimonial-2 testimonial-3";
-  grid-area: testimonial;
-  align-items: center;
+.section-testimonial {
+  display: flex;
+  flex-direction: column;
   align-content: center;
-
-  .testimonial-title {
-    text-align: center;
-    grid-area: testimonial-title;
+  align-items: center;
+  text-align: center;
+  h2 {
+    margin-top: 15%;
+    color: $darkGrayishBlue;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 0.3em;
   }
+  article {
+    padding: 5% 15%;
 
-  .testimonial-1 {
-    grid-area: testimonial-1;
-  }
+    img {
+      border-radius: 50%;
+      width: 25%;
+      height: 25%;
+    }
 
-  .testimonial-2 {
-    grid-area: testimonial-2;
-  }
+    h3 {
+      font-family: $fontFamilyAlt;
+      font-weight: $fontFamilyWeightAlt;
+    }
 
-  .testimonial-3 {
-    grid-area: testimonial-3;
+    h4 {
+      color: $grayishBlue;
+      font-family: $fontFamily;
+    }
+
+    p {
+      color: $veryDarkGrayishBlue;
+      font-family: $fontFamily;
+      font-weight: bolder;
+      font-size: 1.2em;
+    }
   }
 }
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "gallery-1 gallery-2 gallery-3 gallery-4";
-  grid-area: gallery;
-  .gallery-1 {
-    grid-area: gallery-1;
-    @include set-background("../image/photos/image-gallery-milkbottles.jpg");
-  }
+.section-gallery {
+  display: flex;
+  flex-direction: row;
 
-  .gallery-2 {
-    grid-area: gallery-2;
-    @include set-background("../image/photos/image-gallery-orange.jpg");
-  }
+  article {
+    display: flex;
+    flex-direction: column;
 
-  .gallery-3 {
-    grid-area: gallery-3;
-    @include set-background("../image/photos/image-gallery-cone.jpg");
-  }
-
-  .gallery-4 {
-    grid-area: gallery-4;
-    @include set-background("../image/photos/image-gallery-sugarcubes.jpg");
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
+footer {
   background-color: $darkModerateCyan;
-  grid-area: footer;
-  nav {
-    ul {
-      list-style-type: none;
-      li {
-        float: left;
-        width: 25%;
-        text-align: center;
-      }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    background-color: $darkDesaturatedCyan;
+    mask: url(../image/logo.svg) no-repeat center;
+    img {
+      width: 40vw;
+      margin-bottom: 5vh;
+      margin-top: 15vh;
     }
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    li{}
+  }
 }
-//}

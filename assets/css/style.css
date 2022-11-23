@@ -2,177 +2,260 @@
 # General
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# BODY
+# Body
 --------------------------------------------------------------*/
 body {
-  margin: auto;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "header header" "grid-photo grid-photo" "grid-photo grid-photo" "grid-photo grid-photo" "testimonial testimonial" "gallery gallery" "footer footer";
+  margin: 0;
 }
 
 /*--------------------------------------------------------------
-# HEADER
+# Header
 --------------------------------------------------------------*/
-.header {
+header {
   background-image: url("../image/photos/image-header.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "logo menu" "title title";
-  grid-area: header;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
 }
-.header .logo {
-  grid-area: logo;
+header img {
+  align-self: center;
+  width: 12%;
+  left: 0;
 }
-.header .menu {
-  grid-area: menu;
-}
-.header .menu nav ul {
-  list-style-type: none;
-}
-.header .menu nav ul li {
-  float: left;
-  width: 25%;
+header h1 {
   text-align: center;
+  font-family: "Fraunces";
+  font-size: 4em;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
 }
-.header .title {
-  grid-area: title;
-  text-align: center;
+header .topnav {
+  overflow: hidden;
+  position: relative;
+}
+header .topnav #myLinks {
+  display: none;
+}
+header .topnav a {
+  color: hsl(0deg, 0%, 100%);
+  padding: 5vmin;
+  text-decoration: none;
+  font-size: 2em;
+  display: block;
+}
+header .topnav a.icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+header .topnav .active img {
+  height: 4vh;
+  width: auto;
 }
 
 /*--------------------------------------------------------------
-# Grid photo
+# Card
 --------------------------------------------------------------*/
-.grid-photo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "photo-1 photo-2" "photo-3 photo-4" "photo-5 photo-6";
-  grid-area: grid-photo;
+.section-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.grid-photo .photo-1 {
-  grid-area: photo-1;
-  text-align: justify;
+.section-card img {
+  width: 100vw;
 }
-.grid-photo .photo-2 {
-  grid-area: photo-2;
-  background-image: url("../image/photos/image-transform.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.section-card .card-2 {
+  text-align: center;
+  margin: 10%;
 }
-.grid-photo .photo-3 {
-  grid-area: photo-3;
-  background-image: url("../image/photos/image-stand-out.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.section-card .card-2 h2 {
+  font-family: "Fraunces";
+  font-size: 2.5em;
+  font-weight: 700;
 }
-.grid-photo .photo-4 {
-  grid-area: photo-4;
-  text-align: justify;
+.section-card .card-2 p {
+  color: hsl(232deg, 10%, 55%);
+  font-family: "Barlow";
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.75em;
 }
-.grid-photo .photo-5 {
-  grid-area: photo-5;
+.section-card .card-2 h3 {
+  margin-top: 10vh;
+  text-decoration: underline;
+  -webkit-text-decoration-color: hsl(51deg, 100%, 49%);
+          text-decoration-color: hsl(51deg, 100%, 49%);
+  text-decoration-thickness: 0.2em;
+}
+.section-card .card-4 {
+  text-align: center;
+  margin: 10%;
+}
+.section-card .card-4 h2 {
+  font-family: "Fraunces";
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.section-card .card-4 p {
+  color: hsl(232deg, 10%, 55%);
+  font-family: "Barlow";
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.75em;
+}
+.section-card .card-4 h3 {
+  margin-top: 10vh;
+  text-decoration: underline;
+  -webkit-text-decoration-color: hsl(7deg, 99%, 70%);
+          text-decoration-color: hsl(7deg, 99%, 70%);
+  text-decoration-thickness: 0.2em;
+}
+.section-card .card-5 {
   background-image: url("../image/photos/image-graphic-design.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.grid-photo .photo-6 {
-  grid-area: photo-6;
+.section-card .card-5 h2 {
+  position: absolute;
+  width: 100%;
+  bottom: 30vh;
+  text-align: center;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Fraunces";
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.section-card .card-5 p {
+  margin: 10%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow";
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.75em;
+}
+.section-card .card-6 {
   background-image: url("../image/photos/image-photography.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section-card .card-6 h2 {
+  position: absolute;
+  width: 100%;
+  bottom: 30vh;
+  text-align: center;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Fraunces";
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.section-card .card-6 p {
+  margin: 10%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow";
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 1.75em;
 }
 
 /*--------------------------------------------------------------
 # Testimonial
 --------------------------------------------------------------*/
-.testimonial {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "testimonial-title testimonial-title testimonial-title" "testimonial-1 testimonial-2 testimonial-3";
-  grid-area: testimonial;
-  align-items: center;
+.section-testimonial {
+  display: flex;
+  flex-direction: column;
   align-content: center;
-}
-.testimonial .testimonial-title {
+  align-items: center;
   text-align: center;
-  grid-area: testimonial-title;
 }
-.testimonial .testimonial-1 {
-  grid-area: testimonial-1;
+.section-testimonial h2 {
+  margin-top: 15%;
+  color: hsl(232deg, 10%, 55%);
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
 }
-.testimonial .testimonial-2 {
-  grid-area: testimonial-2;
+.section-testimonial article {
+  padding: 5% 15%;
 }
-.testimonial .testimonial-3 {
-  grid-area: testimonial-3;
+.section-testimonial article img {
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+}
+.section-testimonial article h3 {
+  font-family: "Fraunces";
+  font-weight: 700;
+}
+.section-testimonial article h4 {
+  color: hsl(210deg, 4%, 67%);
+  font-family: "Barlow";
+}
+.section-testimonial article p {
+  color: hsl(213deg, 9%, 39%);
+  font-family: "Barlow";
+  font-weight: bolder;
+  font-size: 1.2em;
 }
 
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "gallery-1 gallery-2 gallery-3 gallery-4";
-  grid-area: gallery;
+.section-gallery {
+  display: flex;
+  flex-direction: row;
 }
-.gallery .gallery-1 {
-  grid-area: gallery-1;
-  background-image: url("../image/photos/image-gallery-milkbottles.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.section-gallery article {
+  display: flex;
+  flex-direction: column;
 }
-.gallery .gallery-2 {
-  grid-area: gallery-2;
-  background-image: url("../image/photos/image-gallery-orange.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.gallery .gallery-3 {
-  grid-area: gallery-3;
-  background-image: url("../image/photos/image-gallery-cone.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.gallery .gallery-4 {
-  grid-area: gallery-4;
-  background-image: url("../image/photos/image-gallery-sugarcubes.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+.section-gallery article img {
+  width: 100%;
+  height: 100%;
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
+footer {
   background-color: hsl(168deg, 34%, 41%);
-  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.footer nav ul {
+footer .logo {
+  background-color: hsl(167deg, 40%, 24%);
+  -webkit-mask: url(../image/logo.svg) no-repeat center;
+          mask: url(../image/logo.svg) no-repeat center;
+}
+footer .logo img {
+  width: 40vw;
+  margin-bottom: 5vh;
+  margin-top: 15vh;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-}
-.footer nav ul li {
-  float: left;
-  width: 25%;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
 }/*# sourceMappingURL=style.css.map */
