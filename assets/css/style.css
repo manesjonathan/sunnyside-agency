@@ -86,6 +86,7 @@ header .topnav .active img {
 }
 .section-card .card-2 h3 {
   margin-top: 10vh;
+  font-size: 1.5em;
   text-decoration: underline;
   -webkit-text-decoration-color: hsl(51deg, 100%, 49%);
           text-decoration-color: hsl(51deg, 100%, 49%);
@@ -109,6 +110,7 @@ header .topnav .active img {
 }
 .section-card .card-4 h3 {
   margin-top: 10vh;
+  font-size: 1.5em;
   text-decoration: underline;
   -webkit-text-decoration-color: hsl(7deg, 99%, 70%);
           text-decoration-color: hsl(7deg, 99%, 70%);
@@ -215,6 +217,7 @@ header .topnav .active img {
   font-family: "Barlow";
   font-weight: bolder;
   font-size: 1.2em;
+  line-height: 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -237,25 +240,47 @@ header .topnav .active img {
 # Footer
 --------------------------------------------------------------*/
 footer {
+  color: hsl(167deg, 40%, 24%);
   background-color: hsl(168deg, 34%, 41%);
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
-}
-footer .logo {
-  background-color: hsl(167deg, 40%, 24%);
-  -webkit-mask: url(../image/logo.svg) no-repeat center;
-          mask: url(../image/logo.svg) no-repeat center;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
 }
 footer .logo img {
-  width: 40vw;
-  margin-bottom: 5vh;
-  margin-top: 15vh;
+  height: 7vh;
+  margin: 5vh;
 }
-footer ul {
-  margin: 0;
-  padding: 0;
+footer .menu-list {
+  width: 90%;
+  display: inline-block;
+}
+footer .menu-list ul {
+  font-family: "Barlow";
+  font-size: 1.25em;
+  font-weight: 600;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+}
+footer .menu-list ul li {
+  width: 20em;
+}
+footer .social-list {
+  width: 75%;
+  display: inline-block;
+}
+footer .social-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+footer .social-list ul li {
+  width: 15em;
+}
+footer .social-list ul li .fa {
+  font-size: 2em;
+  margin-top: 10vh;
 }/*# sourceMappingURL=style.css.map */

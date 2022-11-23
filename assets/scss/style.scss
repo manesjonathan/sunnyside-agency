@@ -51,6 +51,7 @@ $bodyFontSize: 1.25em;
 
   h3 {
     margin-top: 10vh;
+    font-size: 1.5em;
     text-decoration: underline;
     text-decoration-color: $color;
     text-decoration-thickness: 0.2em;
@@ -215,6 +216,7 @@ header {
       font-family: $fontFamily;
       font-weight: bolder;
       font-size: 1.2em;
+      line-height: 1.5em;
     }
   }
 }
@@ -241,26 +243,55 @@ header {
 # Footer
 --------------------------------------------------------------*/
 footer {
+  color: $darkDesaturatedCyan;
+
   background-color: $darkModerateCyan;
   display: flex;
   flex-direction: column;
+  align-content: center;
   align-items: center;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
   .logo {
-    background-color: $darkDesaturatedCyan;
-    mask: url(../image/logo.svg) no-repeat center;
     img {
-      width: 40vw;
-      margin-bottom: 5vh;
-      margin-top: 15vh;
+      height: 7vh;
+      margin: 5vh;
     }
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    li{}
+  .menu-list {
+    width: 90%;
+    display: inline-block;
+
+    ul {
+      font-family: $fontFamily;
+      font-size: $bodyFontSize;
+      font-weight: $fontFamilyWeight;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        width: 20em;
+      }
+    }
+  }
+  .social-list {
+    width: 75%;
+    display: inline-block;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        width: 15em;
+        .fa {
+          font-size: 2em;
+          margin-top: 10vh;
+        }
+      }
+    }
   }
 }
