@@ -69,8 +69,16 @@ header .top-nav .active img {
     list-style-type: none;
     top: 0;
     right: 0;
+  }
+  header .nav-menu-width ul li {
     font-size: 0.5em;
     font-family: "Barlow";
+  }
+  header .nav-menu-width ul li :hover {
+    border-radius: 15%;
+    background: hsl(0deg, 0%, 100%);
+    color: hsl(212deg, 27%, 19%);
+    font-weight: bold;
   }
   header .icon {
     visibility: hidden;
@@ -320,19 +328,25 @@ header .top-nav .active img {
 }
 
 @media screen and (min-width: 800px) {
+  .section-testimonial {
+    padding-top: 10vh;
+  }
+  .section-testimonial h2 {
+    font-size: 2rem;
+  }
   .section-testimonial .container {
+    margin: 15vh 0;
     display: flex;
     flex-direction: row;
   }
   .section-testimonial .container .testimonial-card {
-    margin: 0;
     padding: 5%;
     width: 1/3;
     height: auto;
   }
   .section-testimonial .container .testimonial-card img {
     border-radius: 50%;
-    width: 33%;
+    width: 1/3;
     height: auto;
   }
 }
