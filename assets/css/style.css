@@ -5,7 +5,7 @@
 # Mixin
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Body
+# General
 --------------------------------------------------------------*/
 body {
   margin: 0;
@@ -35,22 +35,26 @@ header h1 {
   color: hsl(0deg, 0%, 100%);
   text-transform: uppercase;
 }
-header .top-nav {
-  overflow: hidden;
-  position: relative;
+header .nav-menu-width {
+  display: none;
 }
 header .top-nav a {
   color: hsl(0deg, 0%, 100%);
-  padding: 5vmin;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1rem;
   display: block;
 }
-header .top-nav a.icon {
-  display: block;
+header .top-nav .icon {
   position: absolute;
   right: 0;
   top: 0;
+  padding: 2rem;
+}
+header .top-nav .icon .fa {
+  font-size: 2rem;
+}
+header .top-nav .active {
+  padding: 2rem;
 }
 header .top-nav .active img {
   height: 4vh;
@@ -63,6 +67,9 @@ header .top-nav .active img {
     width: 6%;
     left: 0;
   }
+  header .nav-menu-width {
+    display: flex;
+  }
   header .nav-menu-width ul {
     display: flex;
     position: absolute;
@@ -71,12 +78,13 @@ header .top-nav .active img {
     right: 0;
   }
   header .nav-menu-width ul li {
+    margin: 1rem 2rem;
     font-size: 0.5em;
     font-family: "Barlow";
   }
   header .nav-menu-width ul li :hover {
     border-radius: 15%;
-    background: hsl(0deg, 0%, 100%);
+    background-color: hsl(0deg, 0%, 100%);
     color: hsl(212deg, 27%, 19%);
     font-weight: bold;
   }
@@ -352,25 +360,21 @@ header .top-nav .active img {
 # Gallery
 --------------------------------------------------------------*/
 .section-gallery {
-  display: flex;
-  flex-direction: row;
+  display: table;
 }
-.section-gallery article {
-  display: flex;
-  flex-direction: column;
-}
-.section-gallery article img {
-  width: 100%;
-  height: 100%;
+.section-gallery img {
+  margin: -1vw 0;
+  width: 50%;
+  height: 50%;
 }
 
 @media screen and (min-width: 800px) {
-  .section-gallery article {
+  .section-gallery {
     display: flex;
     flex-direction: row;
   }
-  .section-gallery article img {
-    width: 50%;
+  .section-gallery img {
+    width: 25%;
   }
 }
 /*--------------------------------------------------------------
@@ -389,9 +393,14 @@ footer .logo img {
   height: 7vh;
   margin: 5vh;
 }
+footer a {
+  color: hsl(167deg, 40%, 24%);
+  text-decoration: none;
+}
 footer .menu-list {
   width: 90%;
   display: inline-block;
+  color: hsl(167deg, 40%, 24%);
 }
 footer .menu-list ul {
   font-family: "Barlow";
@@ -439,6 +448,7 @@ footer .social-list ul li .fa {
   }
   footer .menu-list ul li {
     text-align: center;
+    text-decoration: none;
   }
   footer .social-list {
     width: 30vw;

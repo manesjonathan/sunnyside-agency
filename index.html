@@ -11,6 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
 
     <title>Sunnyside agency landing page</title>
+    <script defer src="assets/js/script.js"></script>
 
 </head>
 
@@ -26,7 +27,7 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+            <a class="icon"><i class="fa fa-bars"></i></a>
         </nav>
         <h1> We are creatives</h1>
         <img class="arrow-pic" src="assets/image/icons/icon-arrow-down.svg">
@@ -98,14 +99,10 @@
             </div>
         </section>
         <section class="section-gallery">
-            <article>
-                <img src="assets/image//photos/image-gallery-milkbottles.jpg" alt="">
-                <img src="assets/image/photos/image-gallery-cone.jpg" alt="">
-            </article>
-            <article>
-                <img src="assets/image/photos/image-gallery-orange.jpg" alt="">
-                <img src="assets/image/photos/image-gallery-sugarcubes.jpg" alt="">
-            </article>
+            <img src="assets/image//photos/image-gallery-milkbottles.jpg" alt="">
+            <img src="assets/image/photos/image-gallery-orange.jpg" alt="">
+            <img src="assets/image/photos/image-gallery-cone.jpg" alt="">
+            <img src="assets/image/photos/image-gallery-sugarcubes.jpg" alt="">
         </section>
     </main>
     <footer>
@@ -114,30 +111,21 @@
         </div>
         <nav class="menu-list">
             <ul>
-                <li>About</li>
-                <li>Services</li>
-                <li>Projects</li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
             </ul>
         </nav>
         <nav class="social-list">
             <ul>
-                <li><i class="fa fa-facebook-square"></i></li>
-                <li><i class="fa fa-instagram"></i></li>
-                <li><i class="fa fa-twitter"></i></li>
-                <li><i class="fa fa-pinterest"></i></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
             </ul>
         </nav>
     </footer>
-    <script>
-        function myFunction() {
-            var menu = document.querySelector(".nav-menu-width");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        }
-    </script>
+
 </body>
 
 </html>
