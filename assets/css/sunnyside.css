@@ -121,8 +121,7 @@ header .top-nav .active img {
 .section-card .card-2 h3 {
   font-size: 1.5rem;
   text-decoration: underline;
-  -webkit-text-decoration-color: hsl(51deg, 100%, 49%);
-          text-decoration-color: hsl(51deg, 100%, 49%);
+  text-decoration-color: hsl(51deg, 100%, 49%);
   text-decoration-thickness: 0.3rem;
 }
 .section-card .card-3 {
@@ -155,8 +154,7 @@ header .top-nav .active img {
 .section-card .card-4 h3 {
   font-size: 1.5rem;
   text-decoration: underline;
-  -webkit-text-decoration-color: hsl(7deg, 99%, 70%);
-          text-decoration-color: hsl(7deg, 99%, 70%);
+  text-decoration-color: hsl(7deg, 99%, 70%);
   text-decoration-thickness: 0.3rem;
 }
 .section-card .card-5 {
@@ -453,4 +451,4 @@ footer .social-list ul li .fa {
   footer .social-list ul li {
     text-align: center;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=sunnyside.css.map */
